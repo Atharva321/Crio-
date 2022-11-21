@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.regex.Pattern;
 
 class PostfixExpression {
     // NOTE: Please do not modify this function
@@ -13,19 +14,40 @@ class PostfixExpression {
     // TODO: Implement this method
     static int postfixExpression(String s) {
         if(s.length()==0) return -1;
-        if(s.length()==1) return Integer.parseInt(String.valueOf(s));
+        if(s.length()==2) return Integer.parseInt(String.valueOf(s));
         Stack<Integer> ints = new Stack<>();
 
         int count = 0;
         int ans = 0;
-        while(count < s.length()){
-            char ch = s.charAt(count);
-            if(Character.isDigit(s.charAt(count))){
-                ints.push(Integer.parseInt(String.valueOf(ch)));
+        String[] ch = s.split(" ");
+        while(count < ch.length){
+            
+            /*
+            Regex Meaning:
+
+            Match a single character present in the list below [0-9]
+                + matches the previous token between one and unlimited times, as many times as possible, giving back as needed (greedy)
+                0-9 matches a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)
+
+            Match a single character present in the list below [\\.]
+                ? matches the previous token between zero and one times, as many times as possible, giving back as needed (greedy)
+                \\ matches the character \ with index 9210 (5C16 or 1348) literally (case sensitive)
+                . matches the character . with index 4610 (2E16 or 568) literally (case sensitive)
+
+            Match a single character present in the list below [0-9]
+                0-9 matches a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)
+
+            Global pattern flags 
+                g modifier: global. All matches (don't return after first match)
+                m modifier: multi line. Causes ^ and $ to match the begin/end of each line (not only begin/end of string)
+
+            */
+            if(Pattern.matches("[0-9]+[\\.]?[0-9]*", ch[count])){
+                ints.push(Integer.parseInt(String.valueOf(ch[count])));
             }
         
             // +: addition operator
-            else if(ch == '+'){
+            else if(ch[count].equals("+")){
                 int num2 = ints.pop();
                 int num1 = ints.pop();
                 ints.push(num1 + num2);
@@ -33,7 +55,7 @@ class PostfixExpression {
             }
 
             // -: substraction operator
-            else if(ch == '-'){
+            else if(ch[count].equals("-")){
                 int num2 = ints.pop();
                 int num1 = ints.pop();
                 ints.push(num1 - num2);
@@ -41,13 +63,14 @@ class PostfixExpression {
             }
 
             // *: multiplication operator
-            else if(ch == '*'){
+            else if(ch[count].equals("*")){
                 int num2 = ints.pop();
                 int num1 = ints.pop();
                 ints.push(num1 * num2);
                 //ans += num1 * num2;
             }
 
+            //System.out.println(ints);
             count++;
         }
         return ints.pop();
