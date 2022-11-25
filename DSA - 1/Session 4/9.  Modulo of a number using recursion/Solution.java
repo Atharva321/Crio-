@@ -3,7 +3,23 @@ import java.util.*;
 public class ModuloUsingRecursion {
     // Implement your solution here
     int moduloUsingRecursion(int dividend , int divisor) {
-        
+        if (divisor == 0) { 
+            return -1; 
+        }
+
+        if (dividend < 0) {
+            return -moduloUsingRecursion(-dividend,  divisor); 
+        }  
+
+        if (divisor < 0) { 
+            return  moduloUsingRecursion( dividend, -divisor); 
+        }  
+
+        if (dividend < divisor) { 
+            return  dividend; 
+        }
+    
+        return moduloUsingRecursion(dividend - divisor, divisor);
     }
 
     public static void main(String[] args) {
