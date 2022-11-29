@@ -20,7 +20,9 @@ public class RotateImage {
             int left = 0;
             int right = matrix[0].length-1;
             while(left < right){
-                int temp = matrix[i][left];
+                    
+                    //Reversing the row.
+                    int temp = matrix[i][left];
                     matrix[i][left] = matrix[i][right];
                     matrix[i][right] = temp; 
                 left++;
