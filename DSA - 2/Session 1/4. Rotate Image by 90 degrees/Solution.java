@@ -7,6 +7,8 @@ public class RotateImage {
         //Replace the upper triangular with lower triangular
         for(int i=0; i<matrix.length; i++){
             for(int j=i+1; j<matrix[0].length; j++){
+                
+                    //Swapping the opposite elements.
                     int temp = matrix[i][j];
                     matrix[i][j] = matrix[j][i];
                     matrix[j][i] = temp; 
