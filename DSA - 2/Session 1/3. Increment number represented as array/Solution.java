@@ -26,6 +26,9 @@ class IncrementNumber{
             if(arr[i] < 9){
                 arr[i]++;
                 return arr;
+                //Example:
+                // 118+1 = 119
+                //As above no other addition is required.
             }
             else{
                 arr[i] = 0;
