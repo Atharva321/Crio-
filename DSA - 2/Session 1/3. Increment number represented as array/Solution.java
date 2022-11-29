@@ -38,6 +38,9 @@ class IncrementNumber{
             }
         }
         
+        //If array contains all 9s
+        // Example
+        //999 + 1 = 1000
         int ans[] = new int [n+1];
         ans[0] = 1;
         for(int i = 1; i<n+1; i++){
