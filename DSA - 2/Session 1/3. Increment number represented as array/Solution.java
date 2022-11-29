@@ -33,10 +33,11 @@ class IncrementNumber{
             else{
                 
                 // if element is 9 then adding  one will produce carry.
+                // 119 + 1 = 120
                 arr[i] = 0;
             }
         }
-
+        
         int ans[] = new int [n+1];
         ans[0] = 1;
         for(int i = 1; i<n+1; i++){
