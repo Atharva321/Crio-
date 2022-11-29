@@ -22,6 +22,7 @@ class IncrementNumber{
 
     static int[] incrementNumber(int n, int arr[]){
         for(int i = n-1; i>=0; i--){
+            //We are checking if the digit is lesser than 9
             if(arr[i] < 9){
                 arr[i]++;
                 return arr;
