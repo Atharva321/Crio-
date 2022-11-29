@@ -31,6 +31,8 @@ class IncrementNumber{
                 //As above no other addition is required.
             }
             else{
+                
+                // if element is 9 then adding  one will produce carry.
                 arr[i] = 0;
             }
         }
