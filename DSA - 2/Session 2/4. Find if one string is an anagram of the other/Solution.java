@@ -3,16 +3,28 @@ import java.util.*;
 
 public class ValidAnagram {
     public boolean validAnagram(String s, String t) {
+        
+        /*
+        Approach: 
+        - Create two arrays with size of 26 and increment repseccted index with character occurence.
+        - If any element at same index is not equal then return false.
+        - Then check this two arrays if all indexes are equal then strings are anagram.
+        */
+        
         int firstString [] = new int [26];
         Arrays.fill(firstString, 0);
-        int secondString[] = new int [26];
-        Arrays.fill(firstString, 0);
+        
         for(int i=0; i<s.length(); i++){
             firstString[s.charAt(i) - 'a']++;
         }
+        
+        int secondString[] = new int [26];
+        Arrays.fill(firstString, 0);
+        
         for(int i=0; i<t.length(); i++){
             secondString[t.charAt(i) - 'a']++;
         }
+        
         for(int i=0; i<26; i++){
             if(firstString[i] != secondString[i]){
                 return false;
