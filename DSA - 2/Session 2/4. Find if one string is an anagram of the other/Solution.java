@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+// Time  : O(3*n)  ~ O(n)
+// Space : O(2*26) ~ O(1)
 public class ValidAnagram {
     public boolean validAnagram(String s, String t) {
         
@@ -25,6 +27,7 @@ public class ValidAnagram {
             secondString[t.charAt(i) - 'a']++;
         }
         
+        //Checking if two arrays are equal or not.
         for(int i=0; i<26; i++){
             if(firstString[i] != secondString[i]){
                 return false;
