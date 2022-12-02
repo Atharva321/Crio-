@@ -1,5 +1,8 @@
 import java.util.*;
 
+// Time  : O(n).
+// Space : O(n).
+
 public class FirstMissingPositive {
     public int firstMissingPositive(int[] nums) {
         int numbers = nums.length;
