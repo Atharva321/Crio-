@@ -3,6 +3,8 @@ import java.util.*;
 public class FirstMissingPositive {
     public int firstMissingPositive(int[] nums) {
         int numbers = nums.length;
+        
+        //We will create hashset to store all numbers of the array
         HashSet<Integer> hset = new HashSet<>();
         for(int i=0; i<numbers; i++){
                 hset.add(nums[i]);
@@ -11,11 +13,14 @@ public class FirstMissingPositive {
         // Arrays.sort(nums);
         int n = 1, f;
         boolean isFound = false;
+        
         for(f = 1; f<=numbers; f++){
             if(!hset.contains(f)){
                     return f;
             }
         }
+        
+        return f;
         //return f+1;
         // for(int i=0; i<nums.length; i++){
         //     System.out.print(nums[i] + " "); 
@@ -32,7 +37,7 @@ public class FirstMissingPositive {
         //     if(nums[i] < 0) return i;
         // }
         //System.out.println(f);
-        return f;
+        
     }
 
     public static void main(String[] args) {
