@@ -22,6 +22,10 @@ public class FirstMissingPositive {
             }
         }
         
+        //Suppose, if Array is of nums 1, 2 ,3
+        // 4 is smallest positive integer So, we will return f 
+        // Which will br biggest possitive element of array + 1
+        
         return f;
         //return f+1;
         // for(int i=0; i<nums.length; i++){
