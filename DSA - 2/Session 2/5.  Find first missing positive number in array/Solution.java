@@ -14,6 +14,8 @@ public class FirstMissingPositive {
         int n = 1, f;
         boolean isFound = false;
         
+        //We will check if the numbers from one to n present in hashset or not
+        //HashSet has O(1) accessing complexity. 
         for(f = 1; f<=numbers; f++){
             if(!hset.contains(f)){
                     return f;
