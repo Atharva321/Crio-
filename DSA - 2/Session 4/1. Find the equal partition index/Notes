@@ -1,0 +1,9 @@
+Time Complexity  : O(n)
+Space Complexity : O(1)
+We will calculate total sum first.
+prefixSum = 0
+for i: 1 to n-1 
+    prefixSum += arr[i-1]
+    suffixSum = totalSum - prefixSum - arr[i]
+    if prefixSum = suffixSum
+	return i
