@@ -3,6 +3,9 @@ import java.util.*;
 public class RemoveDuplicatesFromSortedArray {
     
     // Implement your solution by completing the below function
+    
+    // Time : O(n)
+    // Space: O(1)
     public int removeDuplicates(int[] nums) {
         if(nums.length == 1) return 1;
         int ans = 1;
