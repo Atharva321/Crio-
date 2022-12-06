@@ -3,6 +3,9 @@ import java.util.*;
 public class RemoveDuplicatesFromSortedArray {
     
     // Implement your solution by completing the below function
+    
+    // Time  : O(n)
+    // Space : O(n)
     public int removeDuplicates(int[] nums) {
         Set<Integer> hset = new HashSet<>();
         for(int num: nums){
