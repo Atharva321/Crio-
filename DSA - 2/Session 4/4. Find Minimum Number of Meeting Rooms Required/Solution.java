@@ -33,6 +33,8 @@ public class MeetingRooms {
         int ans = 0, cnt = 0;
         for (int i=0; i<intervals.length; i++) {
             int start = intervals[i][0], end = intervals[i][1];
+            
+            //Start : +1 and End : -1
             tmap.put(start, tmap.getOrDefault(start, 0) + 1);
             tmap.put(end, tmap.getOrDefault(end, 0) - 1);
         }
