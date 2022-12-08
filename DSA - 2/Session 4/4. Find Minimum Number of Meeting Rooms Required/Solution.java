@@ -23,6 +23,10 @@ public class MeetingRooms {
         //     }
         // }
         // return rooms;
+        
+        //=================================================================================================================================================        
+        // T : O(nlogn)
+        // S : O(n)
         TreeMap<Integer, Integer> tmap = new TreeMap<>();
         int ans = 0, cnt = 0;
         for (int i=0; i<intervals.length; i++) {
