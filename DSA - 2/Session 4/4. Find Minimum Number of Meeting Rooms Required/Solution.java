@@ -27,6 +27,8 @@ public class MeetingRooms {
         //=================================================================================================================================================        
         // T : O(nlogn)
         // S : O(n)
+        
+        //Using TreeMap to store in sorted order 
         TreeMap<Integer, Integer> tmap = new TreeMap<>();
         int ans = 0, cnt = 0;
         for (int i=0; i<intervals.length; i++) {
@@ -34,6 +36,7 @@ public class MeetingRooms {
             tmap.put(start, tmap.getOrDefault(start, 0) + 1);
             tmap.put(end, tmap.getOrDefault(end, 0) - 1);
         }
+        
         for (int k : tmap.keySet()) {
             cnt += tmap.get(k);
             ans = Math.max(ans, cnt);
