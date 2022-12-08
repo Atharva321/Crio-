@@ -3,8 +3,9 @@ import java.util.*;
 public class MeetingRooms {
 
     public int findNumRooms(int[][] intervals) {
-      //Arrays.sort(intervals, (a,b) -> Integer.compare(a[0], b[0]));
-
+      //Arrays.sort(intervals, (a,b) -> Integer.compare(a[0], b[0]));   
+        // T : O(nlogn)
+        // S : O(n)
         // int[] starts = new int[intervals.length];
         // int[] ends = new int[intervals.length];
         // for (int i = 0; i < intervals.length; i++) {
