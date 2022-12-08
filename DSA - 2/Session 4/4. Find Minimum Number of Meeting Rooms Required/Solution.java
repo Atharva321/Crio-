@@ -40,7 +40,10 @@ public class MeetingRooms {
             tmap.put(start, tmap.getOrDefault(start, 0) + 1);
             tmap.put(end, tmap.getOrDefault(end, 0) - 1);
         }
-
+                
+        //As the elements are stored in sorted order if we adds them 
+        //and take max then we get the max rooms used cincurrently till
+        // all the meeting ends.
         for (int k : tmap.keySet()) {
             cnt += tmap.get(k);
             ans = Math.max(ans, cnt);
