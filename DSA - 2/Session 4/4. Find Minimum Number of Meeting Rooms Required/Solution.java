@@ -35,10 +35,12 @@ public class MeetingRooms {
             int start = intervals[i][0], end = intervals[i][1];
             
             //Start : +1 and End : -1
+            //We only need to consider the meeting running at specific intervals 
+            //thats why if meeting start  we adding +1 and if meeting ends we are adding -1.
             tmap.put(start, tmap.getOrDefault(start, 0) + 1);
             tmap.put(end, tmap.getOrDefault(end, 0) - 1);
         }
-        
+
         for (int k : tmap.keySet()) {
             cnt += tmap.get(k);
             ans = Math.max(ans, cnt);
