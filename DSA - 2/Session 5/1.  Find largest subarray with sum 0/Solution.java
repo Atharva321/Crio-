@@ -1,55 +1,89 @@
 import java.util.*;
 
-class SubarraySumZero{
-	public static String subarraySumZero(Vector<Integer> arr)
- 	{
-        String result;
-		HashSet<Integer> hset = new HashSet<>();
-		int sum = 0;
-		for(int i=0; i<arr.size(); i++){
+class LargestSubarraySumZero {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
 
-			
-			sum += arr.get(i);
-			
-			//edge 1:
-			// for input 10 -10 sum is zero so return true
-			if(sum==0) return "Yes";
-			
-			// 4 5 0 1
-			// 4 9 9 -> return true
-			if(!hset.contains(sum)){
-				hset.add(sum);
-			}
-			else{
-				return "Yes";
-			}
-		}
-        return "No";
-	} /*
-      4 2 -2 5
-	  4 6  4 9
+        int n = sc.nextInt();
+        int arr[] = new int[n];
 
-	  3 2 -1
-	  3 5  4
+        for (int i = 0; i < n; i++)
+            arr[i] = sc.nextInt();
 
-	  1 -1
-	  1  0
-	*/
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int t=sc.nextInt();
-		for(int j=0;j<t;j++)
-		{
-			int n=sc.nextInt();
-			Vector<Integer> arr=new Vector<Integer>();
-			for(int i=0;i<n;i++)
-			{
-				arr.add(sc.nextInt());
-			}
-			System.out.println(subarraySumZero(arr));
-		}
+        ArrayList<Integer> res = largestSubarraySumZero(n, arr);
 
-	}
+        for (int j : res)
+            System.out.print(j + " ");
+
+    }
+
+    static ArrayList<Integer> largestSubarraySumZero(int n, int arr[]) {
+    //Define conditions to move pointer 
+    
+    /*
+    2 3 1 -4 0 6
+    2 5 6  2 2 9
+    3 4
+    5 6  2 2 8
+    */
+
+    //Create HashMap to store the sum and frequency
+    HashMap<Integer, Integer> hmap = new HashMap<>();
+    
+    //Declare variable to store maxLength
+    int maxLength = -1;
+
+    //Variable to store max sub-array start
+    int maxStart = -1;
+
+    //Variable to store max sub-array end
+    int maxEnd = -1;
+    
+    //Creating the pointer to traverse the array.
+    int end = 0;
+
+    //Creating variable to keep track of sum[Prefix Sum].
+    int sum = 0;
+
+    while(end < n){
+        // If we found sum in HashMap then the we get potential subarray of max sum 0.
+        
+        sum += arr[end];
+        if(hmap.containsKey(sum)){
+            int start = hmap.get(sum); 
+            if(arr[start] != 0){
+                start++;
+            }
+            //Update the array indexes
+            if(maxLength < end - start + 1){
+                maxLength = end - start + 1;
+                maxStart = start;
+                maxEnd = end;
+            }
+        }
+        else{
+            hmap.put(sum, end);
+        }
+        end++;
+    }
+
+    //Create an ArrayList to store answer.
+    ArrayList<Integer> ans = new ArrayList<>();
+
+     //If array doesn't contains array with sum 0. 
+    //then add -1 and return Arraylist.
+    if(maxLength == -1){
+        ans.add(-1);
+        return ans;
+    }
+
+    //Storing max sub-array in arraylist.
+    for(int i=maxStart; i <= maxEnd; i++){
+        ans.add(arr[i]);
+    }
+    //System.out.println("maxStart : " + maxStart + " maxEnd : " + maxEnd);
+    return ans;
+    }
 }
 
 /* 
