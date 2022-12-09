@@ -1,72 +1,55 @@
 import java.util.*;
 
-class LargestSubarraySumZero {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
+class SubarraySumZero{
+	public static String subarraySumZero(Vector<Integer> arr)
+ 	{
+        String result;
+		HashSet<Integer> hset = new HashSet<>();
+		int sum = 0;
+		for(int i=0; i<arr.size(); i++){
 
-        int n = sc.nextInt();
-        int arr[] = new int[n];
+			
+			sum += arr.get(i);
+			
+			//edge 1:
+			// for input 10 -10 sum is zero so return true
+			if(sum==0) return "Yes";
+			
+			// 4 5 0 1
+			// 4 9 9 -> return true
+			if(!hset.contains(sum)){
+				hset.add(sum);
+			}
+			else{
+				return "Yes";
+			}
+		}
+        return "No";
+	} /*
+      4 2 -2 5
+	  4 6  4 9
 
-        for (int i = 0; i < n; i++)
-            arr[i] = sc.nextInt();
+	  3 2 -1
+	  3 5  4
 
-        ArrayList<Integer> res = largestSubarraySumZero(n, arr);
+	  1 -1
+	  1  0
+	*/
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int j=0;j<t;j++)
+		{
+			int n=sc.nextInt();
+			Vector<Integer> arr=new Vector<Integer>();
+			for(int i=0;i<n;i++)
+			{
+				arr.add(sc.nextInt());
+			}
+			System.out.println(subarraySumZero(arr));
+		}
 
-        for (int j : res)
-            System.out.print(j + " ");
-
-    }
-  
-  // Time  : O(n)
-  // Space : O(n)
-
-    static ArrayList<Integer> largestSubarraySumZero(int n, int arr[]) {
-        //Define conditions to move pointer 
-    
-    /*
-    2 3 1 -4 0 6
-    3 4
-    5 6  2 2 8
-    */
-    if(n==1){
-        ArrayList<Integer> ans= new ArrayList<>();
-        if(arr[0] == 0){
-            ans.add(0);
-            return ans;
-        }
-        ans.add(-1);
-        return ans;
-    }
-    HashMap<Integer, Integer> hmap = new HashMap<>();
-    int sum = 0;
-    int start = 0;
-    int end = 0;
-    int maxLength = -1;
-    for(int i=0; i<n; i++){
-        sum+= arr[i];
-        if(hmap.containsKey(sum)){
-            int length = i - hmap.get(sum) + 1;
-            if(maxLength < length){
-                maxLength = length;
-                start = hmap.get(sum)+1;
-                end = i;
-            }
-        }
-        else{
-            hmap.put(sum, i);
-        }
-    }
-    ArrayList<Integer> ans= new ArrayList<>();
-    if(maxLength==-1){
-        ans.add(-1);
-        return ans;
-    }
-    for(int i=start; i<= end; i++){
-        ans.add(arr[i]);
-    }
-
-    return ans;
-    }
+	}
 }
 
 /* 
