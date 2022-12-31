@@ -10,9 +10,7 @@ class MinDiff {
             a[i] = sc.nextInt();
         }
         int res = minDiff(n, a);
-
         System.out.println(res);
-
     }
 
     
