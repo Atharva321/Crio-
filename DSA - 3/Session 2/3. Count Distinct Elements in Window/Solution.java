@@ -19,6 +19,8 @@ class CountDistinctElements {
 
     }
 
+    // Time  : O(N)
+    // Space : O(B)
     static ArrayList<Integer> countDistinctElements(int N, int B, int arr[]) {
         ArrayList<Integer> distinctElements = new ArrayList<>();
 
