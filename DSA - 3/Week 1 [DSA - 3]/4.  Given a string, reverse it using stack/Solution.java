@@ -11,7 +11,16 @@ class ReverseString{
     }
 
     static String reverseString(String s){
-        
+        Stack<Character> st = new Stack<>();
+        for(int i=0; i<s.length(); i++){
+            char ch = s.charAt(i);
+            st.push(ch);
+        }
+        s = "";
+        while(!st.isEmpty()){
+            s += st.pop();
+        }
+        return s;
     }
 }
 
