@@ -10,8 +10,8 @@ class ReverseString{
         sc.close();
     }
 
-    
-    
+ // Time  : O(n)
+ 
     static String reverseString(String s){
         Stack<Character> st = new Stack<>();
         for(int i=0; i<s.length(); i++){
