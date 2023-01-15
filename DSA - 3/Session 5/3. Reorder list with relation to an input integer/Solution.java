@@ -8,9 +8,43 @@ public class ListNode {
 import java.io.*;
 import java.util.*;
 import crio.ds.List.ListNode;
+
+// Time  : O(n)
+// Space : O(1)
 class Solution {
   public static ListNode partition( ListNode head , int x) {
-    
+    ListNode result;
+    ListNode firstHead = new ListNode(-1);
+    ListNode firstPointer = firstHead;
+    ListNode secondHead = new ListNode(-1);
+    ListNode secondPointer = secondHead;
+    ListNode thirdHead = new ListNode(-1);
+    ListNode thirdPointer = thirdHead;
+    while(head != null){
+      if(head.val < x){
+        firstPointer.next = head;
+        firstPointer = firstPointer.next;
+      }
+      else if(head.val == x){
+        secondPointer.next = head;
+        secondPointer = secondPointer.next;
+      }
+      else{
+        thirdPointer.next = head;
+        thirdPointer = thirdPointer.next;
+      }
+      head = head.next;
+    }
+    if(secondHead.next == null){
+      firstPointer.next = thirdHead.next;
+      thirdPointer.next = null;
+      return firstHead.next;
+    }
+    firstPointer.next = secondHead.next;
+    secondPointer.next = thirdHead.next;
+    thirdPointer.next = null;
+
+    return firstHead.next;
   }
 }
 
