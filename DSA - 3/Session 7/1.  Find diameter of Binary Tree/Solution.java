@@ -17,6 +17,9 @@ public class TreeNode {
 
 Use new TreeNode(data) to create new Node
 */
+
+// Time  : O(n)
+// Space : O(depth)
 public class Solution {  
     
      private int maxDepth(TreeNode root) {
