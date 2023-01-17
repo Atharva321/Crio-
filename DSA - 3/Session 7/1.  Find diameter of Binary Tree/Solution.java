@@ -17,9 +17,7 @@ public class TreeNode {
 
 Use new TreeNode(data) to create new Node
 */
-public class Solution {
-    int maxDiameter = 0;
-    
+public class Solution {  
     
      private int maxDepth(TreeNode root) {
         if (root == null) return 0;
@@ -33,7 +31,8 @@ public class Solution {
     }
     
     public int diameterOfBinaryTree(TreeNode root) {
-        
+        maxDepth(root);
+        return max;
     }
 
 }
