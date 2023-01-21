@@ -16,10 +16,26 @@ public class TreeNode {
 }
 */
 
-
 public class Solution {
 
+    private int ans;
+    
+    private int kthRecursive(TreeNode node, int k, int index){
+        if(node == null) return index;
+
+        index = kthRecursive(node.left, k, index);
+        index++;
+
+        if(index == k){
+            ans = (int)node.val;
+        }
+        
+        return kthRecursive(node.right, k, index);
+    }
+
     public int kthSmallestElementInABst(TreeNode root, int k) {
+        kthRecursive(root, k, 0);
+        return ans;
     }
 }
 
@@ -43,7 +59,7 @@ public class Solution {
   5. Try to offload processing to functions & keeping your main code small.
   
   Milestone 3: Code by expanding your pseudocode
-  1. Have frequent runs of your code, don’t wait for the end
+  1. Have frequent runs of your code, dont wait for the end
   2. Make sure you name the variables, functions clearly.
   3. Avoid constants in your code unless necessary; go for generic functions, you can use examples for your thinking though.
   4. Use libraries as much as possible
