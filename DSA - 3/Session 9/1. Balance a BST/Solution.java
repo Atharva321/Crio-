@@ -18,6 +18,9 @@ public class TreeNode {
 Use new TreeNode(data) to create new Node
 */
 
+// Time  : O(n)
+// Space : O(n)
+
 public class Solution {
 
     private TreeNode recursiveBalance(List<Long> inOrder, int beg, int end){
