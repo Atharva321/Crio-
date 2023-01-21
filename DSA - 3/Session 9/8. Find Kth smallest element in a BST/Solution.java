@@ -16,6 +16,9 @@ public class TreeNode {
 }
 */
 
+// Time  : O(n)
+// Space : O(1)
+
 public class Solution {
 
     private int ans;
