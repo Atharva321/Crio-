@@ -1,3 +1,6 @@
+// Time  : O(n)
+// Space : 
+
 import java.util.*;
 
 class TwoSumInSortedArray {
