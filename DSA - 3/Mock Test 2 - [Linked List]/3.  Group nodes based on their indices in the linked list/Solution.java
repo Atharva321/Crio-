@@ -7,6 +7,9 @@ public class ListNode {
 }
 */
 
+// Time  : 
+// Space :
+
 public class Solution {
     public ListNode oddEvenLinkedList(ListNode head){
         if(head == null || head.next == null) return head;
