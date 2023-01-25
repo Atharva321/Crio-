@@ -7,8 +7,8 @@ public class ListNode {
 }
 */
 
-// Time  : 
-// Space :
+// Time  : O(n)
+// Space : O(1  )
 
 public class Solution {
     public ListNode oddEvenLinkedList(ListNode head){
