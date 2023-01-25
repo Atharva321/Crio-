@@ -16,8 +16,8 @@ reverse LL
 keep tarck of prev and next node of head and tail respectively
 */
 
-// Time  :
-// Space : 
+// Time  : O(n)
+// Space : O(1)
 
 class Solution{
 
