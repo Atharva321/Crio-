@@ -19,9 +19,11 @@ class Node {
 };
 */
 
+// Time  : O(n)
+// Space : O(1)
+
 public class Solution{
-
-
+    
     public Node copyRandomList(Node head) {
         // duplicates Nodes
         Node tmp = head;
