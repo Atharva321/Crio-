@@ -1,4 +1,3 @@
-
 import java.util.*;
 import crio.ds.Tree.TreeNode;
 
@@ -18,52 +17,8 @@ public class TreeNode {
 
 Use new TreeNode(data) to create new Node
 */
-public class Solution {
-    static Boolean isLeaf(TreeNode root) {
-        return (root.left == null) && (root.right == null);
-    }
 
-    static void addLeftBoundary(TreeNode root, ArrayList < Long > res) {
-        TreeNode cur = root.left;
-        while (cur != null) {
-            if (isLeaf(cur) == false) res.add(cur.val);
-            if (cur.left != null) cur = cur.left;
-            else cur = cur.right;
-        }
-    }
-    static void addRightBoundary(TreeNode root, ArrayList < Long > res) {
-        TreeNode cur = root.right;
-        ArrayList < Long > tmp = new ArrayList < Long > ();
-        while (cur != null) {
-            if (isLeaf(cur) == false) tmp.add(cur.val);
-            if (cur.right != null) cur = cur.right;
-            else cur = cur.left;
-        }
-        int i;
-        for (i = tmp.size() - 1; i >= 0; --i) {
-            res.add(tmp.get(i));
-        }
-    }
 
-    static void addLeaves(TreeNode root, ArrayList < Long > res) {
-        if (isLeaf(root)) {
-            res.add(root.val);
-            return;
-        }
-        if (root.left != null) addLeaves(root.left, res);
-        if (root.right != null) addLeaves(root.right, res);
-    }
-
-    public ArrayList<Long> binaryTreeBoundaryTraversal(TreeNode root) {
-        ArrayList < Long > ans = new ArrayList < Long > ();
-        if (isLeaf(root) == false) ans.add(root.val);
-        addLeftBoundary(root, ans);
-        addLeaves(root, ans);
-        addRightBoundary(root, ans);
-        return ans;
-    }
-
-}
 /* 
   Crio Methodology
   
