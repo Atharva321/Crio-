@@ -15,6 +15,10 @@ public class TreeNode {
     }
 }
 */
+
+// Time  : 
+// Space : 
+
 class Solution{
 	public int inorderSuccessor(TreeNode root,TreeNode givenNode)
 	{
