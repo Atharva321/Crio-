@@ -16,8 +16,8 @@ public class TreeNode {
 }
 */
 
-// Time  : 
-// Space : 
+// Time  : O(n)
+// Space : O(n)
 
 class Solution{
 	public int inorderSuccessor(TreeNode root,TreeNode givenNode)
