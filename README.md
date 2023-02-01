@@ -110,7 +110,7 @@ class Solution
 // Space : O(n)
 
 class Solution {
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    public List<List<Integer>> LevelOrder(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
         
         if(root == null) return ans;
