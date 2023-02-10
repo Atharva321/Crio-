@@ -20,7 +20,7 @@ class Pair implements Comparable<Pair> {
 
  PriorityQueue<Pair> pq = new PriorityQueue<>(Collections.reverseOrder());
  // x : 1, y : 1
-  pq.add(new Pair(distance, 1, 1));
+ pq.add(new Pair(distance, 1, 1));
 ```
 # Binary Tree Templates:
 ## Iterative:
