@@ -1,4 +1,23 @@
 # Crio-
+# Custom Pair Comparator Tempalate
+```
+class Pair implements Comparable<Pair> {
+    long distance;
+    int x;
+    int y;
+
+    public Pair(long distance, int x, int y) {
+        this.distance = distance;
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public int compareTo(Pair o) {
+        return distance > o.distance ? 1 : -1;
+    }
+}
+```
 # Binary Tree Templates:
 ## Iterative:
 ## Pre-Order
