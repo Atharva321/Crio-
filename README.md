@@ -73,7 +73,7 @@ static double fractionalKnapsack(int n, int capacity, int[] wt, int[] val) {
             if (capacity == 0) break;
 
             if (capacity < item.weight) {
-                // profit += ((double)(item.value / item.weight)) * capacity;
+                // profit += (((double)item.value / item.weight)) * capacity;
                 profit += (item.value * ((double)capacity / (double)item.weight));
                 break;  
                 
