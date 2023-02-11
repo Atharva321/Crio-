@@ -97,6 +97,47 @@ static double fractionalKnapsack(int n, int capacity, int[] wt, int[] val) {
         return profit;
     }
 ```
+```
+static class ItemValue {
+        Double cost;
+        double wt, val;
+  
+        public ItemValue(int wt, int val)
+        {
+            this.wt = wt;
+            this.val = val;
+            cost = (double)((double)val/(double)wt);
+        }
+    }
+    
+ static double fractionalKnapsack(int n, int capacity, int[] wt, int[] val) {
+
+        ItemValue[] items = new ItemValue[n];
+        for (int i = 0; i < n; i++) {
+            items[i] = new ItemValue(wt[i], val[i]);
+        }
+
+        Arrays.sort(items, (obj1, obj2) -> Double.compare(obj2.cost , obj1.cost));
+
+
+        double profit = 0;
+
+        for(ItemValue item: items) {
+            
+            if (capacity == 0) break;
+
+            if (capacity < item.wt) {
+                profit += item.cost * capacity;
+                break;  
+            }
+
+            profit += item.val;
+            capacity -= item.wt;
+        }
+
+        return profit;
+    }
+```
 # Sorting HashMap by Value
 ```
 List<Integer> ans = new ArrayList<>();
