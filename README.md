@@ -51,6 +51,17 @@ static int activitySelection(int n, int starting[], int ending[]){
  ```
  ## Fractional KnapSack
  ```
+ static class Pair {
+        
+        int weight;
+        int value;
+
+        public Pair(int weight, int value) {
+            this.weight = weight;
+            this.value = value;
+        }
+    }
+
 static double fractionalKnapsack(int n, int capacity, int[] wt, int[] val) {
 
         Pair[] items = new Pair[n];
