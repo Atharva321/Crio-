@@ -22,6 +22,19 @@ class Pair implements Comparable<Pair> {
  // x : 1, y : 1
  pq.add(new Pair(distance, 1, 1));
 ```
+# Sorting HashMap by Value
+```
+List<Integer> ans = new ArrayList<>();
+Map<Integer, Integer> map = new HashMap<>();
+
+for (int num: nums)
+   map.put(num, map.getOrDefault(num, 0)+1);
+
+List<Map.Entry<Integer, Integer>> list = new ArrayList<Entry<Integer, Integer>>(map.entrySet());
+
+Collections.sort(list, (o1, o2) -> o2.getValue().compareTo(o1.getValue()) );
+
+```
 # Binary Tree Templates:
 ## Iterative:
 ## Pre-Order
