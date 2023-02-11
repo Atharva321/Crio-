@@ -19,7 +19,8 @@ public class BeesToHives{
         System.out.println(ans);
         sc.close();
     }
-    // Implement Your Solution Here
+    
+    
     public static int beesToHives(int n,ArrayList<Integer> beesPositions,ArrayList<Integer> hivesPosition){
         Collections.sort(beesPositions);
         Collections.sort(hivesPosition);
