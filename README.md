@@ -1,4 +1,16 @@
 # Crio-
+# Maths
+## GCD
+```
+public int gcd(int a, int b) { return b==0 ? a : gcd(b, a%b); }
+```
+```
+public int gcd(int a, int b) {
+   if (b==0) return a;
+   return gcd(b,a%b);
+}
+```
+
 # Custom Pair Comparator Tempalate
 ```
 class Pair implements Comparable<Pair> {
