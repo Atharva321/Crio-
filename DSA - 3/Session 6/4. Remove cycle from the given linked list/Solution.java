@@ -1,3 +1,6 @@
+// Time  : O(n)
+// Space : O(1)
+
 import crio.ds.List.ListNode;
 /*
 public class ListNode {
