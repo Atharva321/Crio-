@@ -1,3 +1,6 @@
+// Time  : O(n)
+// Space : O(1)
+
 import java.util.*;
 
 class MaxInArray {
