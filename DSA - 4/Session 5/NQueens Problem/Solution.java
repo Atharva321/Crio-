@@ -9,12 +9,22 @@ public class NQueens {
                 board[row][col] = 0;
             }
         }
-
-        return queenPlacer(board, 0, n);
+        queenPlacer(board, 0, n);
+        if(ans.length() < n*n){
+            return "No Solution Exists";
+        }
+        return "";
     }
 
-    public static String queenPlacer(int [][] board,int row,int n){
-        if(row == n) return stringConverter(board, n);
+    boolean flag = false;
+
+    static String ans = "";
+
+    public static boolean queenPlacer(int [][] board,int row,int n){
+        if(row == n){
+            ans += stringConverter(board, n);
+            return true;
+        } 
 
         for(int col = 0; col < n; col++){
             if(isValid(board, row, col, n)){
@@ -24,32 +34,32 @@ public class NQueens {
             }
         }
 
-        return "No Solution Exists";
+        // for(int r = 0; r < n; r++){
+        //     for(int c = 0; c < n; c++){
+        //         System.out.print(board[r][c] + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        
+        return false;
     }
 
     public static boolean isValid(int [][] board,int row,int col,int n){
-        int wall = Math.min(row, col);
+        
         //left diaginal
-        int r = row-1;
-        int c = col-1;
-        while(r>=0 && c>=0){
-            if(board[row][col]==1) return false;
-            r--;
-            c--;
+        for(int r=row-1, c=col-1; r>=0 && c>=0; r--,c--){
+            if(board[r][c]==1) return false;
         }
 
         //column
-        for(int j=0; j<col; j++){
-            if(board[row][j]==1) return false;
+        for(int j=0; j<row; j++){
+            if(board[j][col]==1) return false;
         }
 
         //right diagonal
-        row--;
-        col++;
-        while(row>=0 && col<n){
-            if(board[row][col]==1) return false;
-            row--;
-            col++;
+        for(int r=row, c=col; r>=0 && c<n; r--,c++){
+            if(board[r][c]==1) return false;
         }
         
         return true;
@@ -57,6 +67,13 @@ public class NQueens {
 
     public static String stringConverter(int [][] chessBoard,int n){
         String board = "";
+        for(int r = 0; r < n; r++){
+            for(int c = 0; c < n; c++){
+                System.out.print(chessBoard[r][c] + "");
+            }
+            System.out.println();
+        }
+        System.out.println();
         for(int row = 0; row < n; row++){
             for(int col = 0; col < n; col++){
                 board += chessBoard[row][col];
