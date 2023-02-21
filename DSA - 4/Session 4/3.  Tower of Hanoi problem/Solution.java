@@ -1,3 +1,6 @@
+// Time  : O(2^n)
+// Space : O(n)
+
 import java.util.*;
 
 public class TowerOfHanoi {
