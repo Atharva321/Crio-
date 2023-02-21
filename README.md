@@ -352,4 +352,48 @@ public class BalancedBraces {
     }
 }
 ```
+# Backtracking
 
+## Word Search 1
+```
+public class WordSearch {
+    int rowDir [] = {-1,1,0,0};
+    int colDir [] = {0,0,-1,1};
+    static boolean [][] checker;
+    
+    public boolean exist(char[][] board, String word) {
+        boolean [][] checker = new boolean [board.length][board[0].length];
+        for(int i = 0 ; i < board.length ; i++) {
+            for(int j = 0 ; j < board[0].length;  j++) {
+                tracker(checker);
+                if(isFound(board, checker, word, i, j, 0)) return true;
+            }
+        }
+        return false;
+    }
+    public boolean isFound(char[][] board,boolean[][] checker, String word, int row, int col, int i){
+        if(row >= 0 && row < board.length && col >= 0 && col < board[0].length){
+            if(board[row][col] == word.charAt(i) && checker[row][col] == false){
+                //base case
+                if(i == word.length() -1) return true;
+                
+                checker[row][col] = true;
+                i++;
+                
+                return isFound(board, checker, word, row-1, col, i) 
+                || isFound(board, checker, word, row+1, col, i) 
+                || isFound(board, checker, word, row, col-1, i) 
+                || isFound(board, checker, word, row, col+1, i);
+            }
+        }
+        return false;
+    }
+
+    public void tracker(boolean[][] checker){
+        for(int i=0; i<checker.length; i++){
+            for(int j=0; j<checker[0].length; j++){
+                checker[i][j] = false;
+            }
+        }
+    }
+```
