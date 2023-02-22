@@ -419,7 +419,7 @@ class Solution {
         
         
         for(int nbr: adj.get(src)){
-                paths += printAllPaths(visited, V, adj, nbr, destn, src + "->" + nbr, 0);
+                paths += printAllPaths(V, adj, nbr, destn, src + "->" + nbr, 0);
         }
         
         return paths;
