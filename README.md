@@ -397,3 +397,32 @@ public class WordSearch {
         }
     }
 ```
+# Graph
+## Print All Paths in directed graph
+```
+class Solution {
+    // Function to count paths between two vertices in a directed graph.
+    public int countPaths(int V, ArrayList<ArrayList<Integer>> adj, int source,
+                   int destination) {
+        // Code here
+        String path = "";
+        int possiblePaths = 
+        printAllPaths(V, adj, source, destination, path, 0);
+        return possiblePaths;
+    }
+    
+    public int printAllPaths(int V, ArrayList<ArrayList<Integer>> adj, int src, int destn, String path, int paths){
+        if(src == destn){
+            System.out.println(path);
+            return 1;
+        }
+        
+        
+        for(int nbr: adj.get(src)){
+                paths += printAllPaths(visited, V, adj, nbr, destn, src + "->" + nbr, 0);
+        }
+        
+        return paths;
+    }
+}
+```
