@@ -398,6 +398,75 @@ public class WordSearch {
     }
 ```
 # Graph
+## Source to Destination Path
+```
+import java.util.*;
+
+public class RouteBetweenNodes {
+    // Implement Solution Here
+    boolean routeBetweenNodes(int source , int destination ,int n,  ArrayList<ArrayList<Integer>> edges) {
+        boolean [] visited = new boolean [n+1];
+        
+        //Firt create Adjacency List
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>(n+1);
+        
+        for(int i=0; i<=n;i++){
+            adj.add(new ArrayList<Integer>());
+        }
+
+        // adding connections
+        for(int i=0; i<edges.size(); i++){
+            adj.get(edges.get(i).get(0)).add(edges.get(i).get(1));
+        }
+
+        return printAllPaths(visited, n, adj, source, destination);
+    }
+
+    public boolean printAllPaths(boolean [] visited, int V, ArrayList<ArrayList<Integer>> adj, int src, int destn){
+        
+        visited[src] = true;
+
+        for(int nbr: adj.get(src)){
+            
+            if(nbr == destn){
+                return true;
+            }
+
+            if(visited[nbr] != true) 
+                if(printAllPaths(visited, V, adj, nbr, destn)) return true;
+        }
+
+        return false;
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        for (int p = 0 ; p < t ; p++) {
+            int n = scanner.nextInt();
+            int m = scanner.nextInt();
+            ArrayList<ArrayList<Integer>> edges = new ArrayList<ArrayList<Integer>>();
+        
+            for(int i=0;i<m;i++){
+                edges.add(new ArrayList<Integer>());
+                edges.get(i).add(scanner.nextInt());
+                edges.get(i).add(scanner.nextInt());
+            }
+            int src = scanner.nextInt();
+            int dest = scanner.nextInt();
+            RouteBetweenNodes answer = new RouteBetweenNodes();
+            boolean result = answer.routeBetweenNodes(src, dest,n,edges);
+            if (result) {
+                System.out.println("yes");
+            } else {
+                System.out.println("no");
+            }
+        }
+        scanner.close();
+    }
+}
+```
+
 ## Print All Paths in directed graph
 ```
 class Solution {
