@@ -407,7 +407,7 @@ public class RouteBetweenNodes {
     boolean routeBetweenNodes(int source , int destination ,int n,  ArrayList<ArrayList<Integer>> edges) {
         boolean [] visited = new boolean [n+1];
         
-        //Firt create Adjacency List
+        //First create Adjacency List
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>(n+1);
         
         for(int i=0; i<=n;i++){
