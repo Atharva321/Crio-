@@ -1,9 +1,11 @@
+// Time  : O(V+E)
+// Space : O(V+E)
+
 import java.util.*;
 
 class TopologicalOrdering{
 	private static Vector<Integer> topologicalOrdering(int n,Vector<Vector<Integer>> edges)
 	{
-          // Vector<Vector<Integer>> adj = new Vector<Vector<Integer>>(n);
           ArrayList<ArrayList<Integer>> adj = new ArrayList<>(n);
           for(int i=0; i<n; i++){
                adj.add(new ArrayList<Integer>());
