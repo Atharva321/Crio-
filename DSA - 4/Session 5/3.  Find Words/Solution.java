@@ -10,36 +10,31 @@ public class WordSearch {
         boolean [][] checker = new boolean [board.length][board[0].length];
         for(int i = 0 ; i < board.length ; i++) {
             for(int j = 0 ; j < board[0].length;  j++) {
-                tracker(checker);
                 if(isFound(board, checker, word, i, j, 0)) return true;
             }
         }
         return false;
     }
     public boolean isFound(char[][] board,boolean[][] checker, String word, int row, int col, int i){
-        if(row >= 0 && row < board.length && col >= 0 && col < board[0].length){
-            if(board[row][col] == word.charAt(i) && checker[row][col] == false){
-                //base case
-                if(i == word.length() -1) return true;
-                
-                checker[row][col] = true;
-                i++;
-                
-                return isFound(board, checker, word, row-1, col, i) 
-                || isFound(board, checker, word, row+1, col, i) 
-                || isFound(board, checker, word, row, col-1, i) 
-                || isFound(board, checker, word, row, col+1, i);
-            }
-        }
-        return false;
-    }
+        if(i == word.length()) return true;
 
-    public void tracker(boolean[][] checker){
-        for(int i=0; i<checker.length; i++){
-            for(int j=0; j<checker[0].length; j++){
-                checker[i][j] = false;
-            }
+        if(row < 0 || row >= board.length || col < 0 || col >= board[0].length || board[row][col] != word.charAt(i) || checker[row][col]){
+            return false;
+        }  
+
+        checker[row][col] = true;
+        i++;
+                
+        if(    isFound(board, checker, word, row-1, col  , i) 
+            || isFound(board, checker, word, row+1, col  , i) 
+            || isFound(board, checker, word, row  , col-1, i) 
+            || isFound(board, checker, word, row  , col+1, i)){
+            return true;
         }
+            
+        checker[row][col] = false;
+        
+        return false;
     }
 
     public static void main(String[] args) {
