@@ -397,6 +397,53 @@ public class WordSearch {
         }
     }
 ```
+# Grid
+## Maximum area of an island
+```
+import java.util.*;
+import java.io.*;
+
+
+class MaxAreaOfIsland{
+
+
+    public static int maxAreaOfIsland(int [][] grid){
+        int ans = 0;
+        int rows = grid.length;
+        int cols = grid[0].length;
+
+        int[][] vis = new int[rows][cols];
+
+        for (int i=0;i<grid.length;i++) {
+            for (int j=0;j<grid[0].length;j++) {
+                vis[i][j] = 0;
+            }
+        }
+
+        int maxArea = 0;
+        for (int i=0;i<grid.length;i++) {
+            for (int j=0;j<grid[0].length;j++) {
+                maxArea = Math.max(maxArea, largestIsland(i, j, vis, grid, maxArea));
+            }
+        }
+        return maxArea;
+    }
+    
+    public static int largestIsland(int i, int j, int[][] vis, int [][] grid, int maxArea) {
+        int x = i;
+        int y = j;
+        if (x<0 || x>grid.length-1 || y<0 || y>grid[0].length-1 || grid[x][y]==0 || vis[x][y]==1) {
+            return 0;
+        }
+        vis[x][y] = 1;
+        return (1 + 
+            largestIsland(x,   y-1, vis, grid, maxArea) +
+            largestIsland(x,   y+1, vis, grid, maxArea) +
+            largestIsland(x-1, y,   vis, grid, maxArea) +
+            largestIsland(x+1, y,   vis, grid, maxArea));
+    }
+}
+```
 # Graph
 ## Source to Destination Path
 ```
