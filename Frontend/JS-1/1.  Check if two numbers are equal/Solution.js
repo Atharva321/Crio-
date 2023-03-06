@@ -1,8 +1,5 @@
-/**
- * @param {number} a
- * @param {number} b
- * @return {boolean}
- */
+// Time  : O(1)
+// Space : O(1)
 
 function isEqual(a, b) {
     // You only need to implement this function.
@@ -16,4 +13,3 @@ else
 
 
 module.exports = isEqual;
-
