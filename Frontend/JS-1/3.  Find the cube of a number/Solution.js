@@ -1,3 +1,6 @@
+// Time  : O(1)
+// Space : O(1)
+
 /**
  * @param {number} a
  * @return {number}
@@ -15,4 +18,3 @@ else
 
 
 module.exports = findCube;
-
