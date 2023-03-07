@@ -1,3 +1,6 @@
+// Time  : O(1)
+// Space : O(n)
+
 /**
  * @param {number} a
  * @param {number} b
@@ -22,4 +25,3 @@ else
     console.log("Sample test case for input a = 1, b = 2 and c = 3 passed!");
 
 module.exports = findSmallest;
-
