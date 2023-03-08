@@ -1,3 +1,6 @@
+// Time  : O(1)
+// Space : O(1)
+
 /**
  * @param {number} a
  * @param {number} b
@@ -14,4 +17,3 @@ else
     console.log("Sample test case for input a = 896.78 and b = 11.5 passed!");
 
 module.exports = multiplyTwoDecimals;
-
