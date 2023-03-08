@@ -1,3 +1,6 @@
+// Time  : O(1)
+// Space : O(n)
+
 function sumOfTwoNumbers(a, b) {
     // You only need to implement this function.
     return a + b;
