@@ -1,3 +1,6 @@
+// Time  : O(m*n)
+// Space : O(m*n)
+
 import java.util.*;
 
 class LongestCommonSubstring{
