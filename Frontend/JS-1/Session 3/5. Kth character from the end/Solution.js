@@ -1,17 +1,19 @@
 /**
- * @param {number} r
+ * @param {string} str
+ * @param {number} k
  * @return {string}
  */
 
 
-function circleValues(r){
+function kthCharFromEnd(str, k){
   // You only need to implement this function.
-  return "A circle of radius " + r + " has a diameter " + 2*r;
+  return str[str.length - k];
 }
 
-if (circleValues(2) !== "A circle of radius 2 has a diameter 4")
-  console.log("Test fails: Expected 'A circle of radius 2 has a diameter 4' for input r = 2");
+if (kthCharFromEnd("abcdefghi", 2) !== 'h')
+  console.log("Test fails: Expected 'h' for input str = 'abcdefghi' and k = 2");
 else
-  console.log("Sample test case for input r = 2 passed!");
+  console.log("Sample test case for input str = 'abcdefghi' and k = 2 passed!");
 
-module.exports = circleValues
+module.exports = kthCharFromEnd
+
