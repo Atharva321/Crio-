@@ -1,3 +1,5 @@
+// 
+
 /**
  * @param {string} name1
  * @param {string} name2
@@ -16,4 +18,3 @@ else
   console.log("Sample test case for input name1 = 'Rahul' and name2 = 'Kiran' passed!");
 
 module.exports = findTeamName;
-
