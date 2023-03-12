@@ -1,5 +1,5 @@
 // Time  : O(1)
-// Space :
+// Space : O(1)
 
 /**
  * @param {number} r
