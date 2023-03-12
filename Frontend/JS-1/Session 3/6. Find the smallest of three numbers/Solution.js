@@ -1,9 +1,13 @@
+// Time  : O(1)
+// Space : O(1)
+
 /**
  * @param {number} a
  * @param {number} b
  * @param {number} c
  * @return {number}
  */
+
 function findSmallest(a, b, c) {
       // You only need to implement this function.
       if(a > b){
