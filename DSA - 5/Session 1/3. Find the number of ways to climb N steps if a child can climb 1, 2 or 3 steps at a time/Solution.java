@@ -1,6 +1,9 @@
 // Time  : O(n)
 // Space : O(n)
 
+// Space can be oprtimized to order of 1 by replacing DP Array
+// With three variables.
+
 import java.util.*;
 
 class TripleStep {
