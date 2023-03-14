@@ -1,5 +1,5 @@
-// Time  :
-// Space :
+// Time  : O(1)
+// Space : O(1)
 
 /**
  * @param {string[]} arr
