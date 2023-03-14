@@ -1,3 +1,6 @@
+// Time  :
+// Space :
+
 /**
  * @param {number} n
  * @return {number}
