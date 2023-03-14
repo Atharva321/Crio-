@@ -1,7 +1,7 @@
 // Time  : O(n)
 // Space : O(n)
 
-// Space can be oprtimized to order of 1 by replacing DP Array
+// Space can be oprtimized to O(1) by replacing DP Array
 // With three variables.
 
 import java.util.*;
