@@ -1,3 +1,6 @@
+// Time  : O(n)
+// Space : O(1)
+
 /**
  * @param {string} str
  * @return {string}
