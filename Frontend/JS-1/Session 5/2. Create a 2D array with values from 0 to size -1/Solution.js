@@ -1,4 +1,5 @@
 // Time  : O(n*n)
+// Space : O(n*n)
 
 /**
  * @param {number} size
