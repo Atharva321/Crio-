@@ -1,3 +1,5 @@
+// Time  : O(n*n)
+
 /**
  * @param {number} size
  * @return {number[][]}
