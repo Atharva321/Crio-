@@ -1,3 +1,6 @@
+// Time  : O(nlogn)
+// Space : O(1)
+
 /**
  * @param {string[]} arr
  * @param {string} ele
