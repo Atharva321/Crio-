@@ -1,3 +1,6 @@
+// Time  : O(n^2)
+// Space : O(1)
+
 /**
  * @param {number[][]} arr
  * @return {number}
