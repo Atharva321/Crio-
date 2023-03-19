@@ -1,3 +1,5 @@
+// Time  : O(1)
+
 /**
  * @param {string} str
  * @param {number} k
