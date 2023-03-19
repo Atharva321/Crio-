@@ -1,11 +1,11 @@
 // Time  : O(1)
+// Space : O(1)
 
 /**
  * @param {string} str
  * @param {number} k
  * @return {string}
  */
-
 
 function kthCharFromEnd(str, k){
   // You only need to implement this function.
