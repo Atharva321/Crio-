@@ -1,1 +1,25 @@
+main {
+        display: grid;
 
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 200px 200px 200px;
+      }
+
+      #item-1 {
+        background-color: cyan;
+      }
+      #item-2 {
+        background-color: rgb(133, 230, 103);
+      }
+      #item-3 {
+        background-color: rgb(238, 137, 137);
+      }
+      #item-4 {
+        background-color: rgb(109, 144, 241);
+      }
+      #item-5 {
+        background-color: rgb(245, 212, 150);
+      }
+      #item-6 {
+        background-color: rgb(247, 126, 210);
+      }
