@@ -621,7 +621,7 @@ class TopologicalOrdering{
 	}
 }
 ```
-# minimum cost to travel cities [Prim's Algo(Adjacency List)]
+## Minimum Cost to travel cities [Prim's Algo(Adjacency List)]
 ```
 public static int minCostOfRoad(int V, ArrayList<ArrayList<Integer>> edges){
 
