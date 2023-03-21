@@ -621,6 +621,60 @@ class TopologicalOrdering{
 	}
 }
 ```
+# minimum cost to travel cities [Prim's Algo(Adjacency List)]
+```
+public static int minCostOfRoad(int V, ArrayList<ArrayList<Integer>> edges){
+
+           ArrayList<ArrayList<Pair>> adj = getAdjList(V, edges);
+	   boolean[] visited = new boolean[V+1];
+	   PriorityQueue<Pair> minHeap 
+	   = new PriorityQueue<>((a, b) -> a.weight - b.weight);
+	   
+	   minHeap.offer(new Pair(1, 0));
+	   int mstSum = 0;
+	   
+	   while (minHeap.size() != 0) {
+	       Pair curr = minHeap.poll();
+	       if (visited[curr.node]) continue;
+	 
+	       visited[curr.node] = true;
+	       mstSum += curr.weight;
+	       
+	       for (Pair nbr : adj.get(curr.node)) {
+	           
+	           if (!visited[nbr.node])
+	               minHeap.offer(nbr);
+	       }
+	   }
+	   
+	   return mstSum;
+    }
+
+    static ArrayList<ArrayList<Pair>> getAdjList(int V, ArrayList<ArrayList<Integer>> edges) {
+	    
+	    ArrayList<ArrayList<Pair>> adj = new ArrayList<>(V+1);
+	    for (int i = 0; i <= V; i++) 
+	        adj.add(new ArrayList<>());
+	    
+	    for (ArrayList<Integer> edge: edges) {
+	        adj.get(edge.get(0)).add(new Pair(edge.get(1), edge.get(2)));
+	        adj.get(edge.get(1)).add(new Pair(edge.get(0), edge.get(2)));
+	    }
+	    
+	    return adj;
+	}
+}
+
+class Pair {
+    int node;
+    int weight;
+    
+    public Pair(int node, int weight) {
+        this.node = node;
+        this.weight = weight;
+    }
+}
+```
 # DP
 ## 0-1 KnapSack
 ```
