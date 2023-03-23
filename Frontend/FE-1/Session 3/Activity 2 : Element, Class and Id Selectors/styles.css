@@ -1,1 +1,11 @@
+body {
+  background-color: orange;
+}
 
+#first {
+  color: green;
+}
+
+#second {
+  background-color: white;
+}
