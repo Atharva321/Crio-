@@ -1,6 +1,10 @@
+// Time  : O(1)
+
+
 /**
  * @return {string}
  */
+
 function getFirstItem() {
   const shoppingCart = {"One": "Apple", "Two": "Orange"};
   return shoppingCart.One;
