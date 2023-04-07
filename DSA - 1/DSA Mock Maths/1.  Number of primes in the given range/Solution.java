@@ -39,7 +39,6 @@ class NumberOfPrimesInRange {
     static int numberOfPrimesInARange(int l, int r) {
         int primeNums = 0;
         for(int i = l; i<=r; i++){
-            //System.out.println(i);
             if(isPrime(i)){
                 primeNums++;
             }
