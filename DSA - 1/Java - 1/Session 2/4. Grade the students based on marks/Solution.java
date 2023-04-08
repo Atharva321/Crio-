@@ -1,5 +1,5 @@
-// Time  : O(n)
-// Space : O(n)
+// Time  : O(1)
+// Space : O(1)
 
 import java.util.*;
 
