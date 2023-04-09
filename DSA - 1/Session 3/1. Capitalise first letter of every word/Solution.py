@@ -1,4 +1,4 @@
-# Time  : 
+# Time  : O(n)
 # Space :
 
 def capitalise(s: str) -> str:
