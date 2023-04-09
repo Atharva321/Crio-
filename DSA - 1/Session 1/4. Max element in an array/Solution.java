@@ -4,7 +4,6 @@
 import java.util.*;
 
 class MaxInArray {
-    // NOTE: Please do not modify this function
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
