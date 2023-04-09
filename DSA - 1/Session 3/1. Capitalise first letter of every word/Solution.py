@@ -8,7 +8,6 @@ def capitalise(s: str) -> str:
     return s
 
 
-# NOTE: Please do not modify this function
 def main():
     s = input()
     res = capitalise(s)
