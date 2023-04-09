@@ -1,3 +1,6 @@
+# Time  : 
+# Space :
+
 def capitalise(s: str) -> str:
     ans  = s.split()
     for i in range(0,len(ans)):
