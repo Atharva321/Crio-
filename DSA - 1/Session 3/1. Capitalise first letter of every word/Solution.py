@@ -1,4 +1,3 @@
-# TODO: Implement this method
 def capitalise(s: str) -> str:
     ans  = s.split()
     for i in range(0,len(ans)):
