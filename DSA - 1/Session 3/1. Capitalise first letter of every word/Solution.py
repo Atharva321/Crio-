@@ -1,5 +1,5 @@
 # Time  : O(n)
-# Space :
+# Space : O(1)
 
 def capitalise(s: str) -> str:
     ans  = s.split()
