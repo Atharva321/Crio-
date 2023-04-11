@@ -1,3 +1,6 @@
+// Time  : 
+// Space :
+
 public class Solution {
     public static String trueOrFalse(boolean teaching) {
         if(teaching) return "Good";
