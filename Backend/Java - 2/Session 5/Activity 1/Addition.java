@@ -1,3 +1,5 @@
+// Polymorphism by changing number of arguments.
+
 class SimpleAddition {
     int add(int a, int b){
         return a+b;
