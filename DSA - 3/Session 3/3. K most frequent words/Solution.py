@@ -1,5 +1,5 @@
-# Time  :
-# Space :
+# Time  : O(n)
+# Space : O(n)
 
 from collections import Counter
 from typing import List
