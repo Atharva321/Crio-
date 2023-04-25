@@ -11,6 +11,8 @@ def frequentWords(words: List[str], k: int) -> List[str]:
     count = {}
     for word in words:
         count[word] = count.get(word, 0) + 1
+    
+    # Using Heap
     heap = []
     for key, value in count.items():
         heapq.heappush(heap, (-value, key))    
