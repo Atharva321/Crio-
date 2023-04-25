@@ -1,4 +1,4 @@
-# Time  :
+# Time  : O(n)
 # Space :
 
 from collections import Counter
